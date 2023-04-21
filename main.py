@@ -12,7 +12,7 @@ def main():
     # heap.print_heap()
 
     nums = [jd(1,30_000) for _ in range(10_000)]
-    # get_creation_heap_graphs(nums,'Heaps_creation_times.png')
+    #get_creation_heap_graphs(nums,'Heaps_creation_times.png')
     get_remove_root_heap_graphs(nums, 'Heap_remove_root_times.png')
 
 
@@ -71,8 +71,6 @@ def get_remove_root_heap_graphs(numbers,title): # nar_num -> 2,3 or 4
     y_axis_3 = []
     y_axis_4 = []
     heap_2 = Heap(numbers,2)
-    heap_3 = Heap(numbers,3)
-    heap_4 = Heap(numbers,4)
     for range in x_axis: # 2-arny
         gc_old = gc.isenabled()
         gc.disable()
@@ -85,6 +83,7 @@ def get_remove_root_heap_graphs(numbers,title): # nar_num -> 2,3 or 4
         if gc_old: gc.enable()
         y_axis_2.append(stop - start)
 
+    heap_3 = Heap(numbers,3)
     for range in x_axis: # 3-arny
         gc_old = gc.isenabled()
         gc.disable()
@@ -95,6 +94,7 @@ def get_remove_root_heap_graphs(numbers,title): # nar_num -> 2,3 or 4
         if gc_old: gc.enable()
         y_axis_3.append(stop - start)
 
+    heap_4 = Heap(numbers,4)
     for range in x_axis: # 4-arny
         gc_old = gc.isenabled()
         gc.disable()
