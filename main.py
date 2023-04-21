@@ -6,14 +6,17 @@ from matplotlib import pyplot as plt
 import sys
 import os
 
-def main():
-    # arr = [35, 24, 12, 20, 7, 9, 2, 18, 1, 3, 5, 4]
-    # heap = Heap(arr, 4)
-    # heap.print_heap()
 
-    nums = [jd(1,30_000) for _ in range(10_000)]
+def main():
+    heap = Heap([35, 24, 12, 20, 7, 9], 4)
+    heap.print_heap()
+
+    heap.slide_down(2)
+    heap.print_heap()
+
+    # nums = [jd(1,30_000) for _ in range(10_000)]
     #get_creation_heap_graphs(nums,'Heaps_creation_times.png')
-    get_remove_root_heap_graphs(nums, 'Heap_remove_root_times.png')
+    # get_remove_root_heap_graphs(nums, 'Heap_remove_root_times.png')
 
 
 
