@@ -13,12 +13,13 @@ class Heap:
             self.push(parent_index, value)                          # recursively push the value up
 
     def remove_root(self):
-        root_value = self.arr[0]                        # Save the root value
-        last_index = len(self.arr) - 1                  # Find the last index
-        self.arr[0] = self.arr[last_index]              # Move the last value to the root
-        self.arr.pop()                                  # Remove the last value
-        self.slide_down(curr_index = 0)                 # Slide the new root down until satisfied
-        return root_value
+        if self.arr:
+            root_value = self.arr[0]                        # Save the root value
+            last_index = len(self.arr) - 1                  # Find the last index
+            self.arr[0] = self.arr[last_index]              # Move the last value to the root
+            self.arr.pop()                                  # Remove the last value
+            self.slide_down(curr_index = 0)                 # Slide the new root down until satisfied
+            return root_value
 
     def slide_down(self, curr_index):
         while curr_index < len(self.arr):
