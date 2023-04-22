@@ -8,8 +8,9 @@ import os
 
 def main():
     numbers = [random.randint(1, 30000) for _ in range(100000)]
-    # get_creation_heap_graphs(numbers, 'Heaps_creation_times.png')
-    # get_remove_root_heap_graphs(numbers, 'Heap_remove_root_times.png')
+    # numbers.sort(reverse=True)
+    # get_creation_heap_graphs(numbers, 'Heaps_creation_times_sorted.png')
+    # get_remove_root_heap_graphs(numbers, 'Heap_remove_root_times_sorted.png')
 
 def get_creation_heap_graphs(numbers, title):
     x_axis = [10000, 20000, 30000, 40000, 50000, 60000, 70000, 80000, 90000, 100000]
